@@ -1,11 +1,11 @@
 import { Injectable, Service, signal, WritableSignal } from '@angular/core';
-import { Dog } from './defs';
+import { DogT } from './defs';
 import { CHOOSEABLEDOGS } from './defs';
 
 @Injectable({ providedIn: 'root' })
 export class DogsService {
 
-    chosenDogsSig: WritableSignal<Array<Dog | undefined>> = signal(new Array<Dog | undefined>());
+    chosenDogsSig: WritableSignal<Array<DogT | undefined>> = signal(new Array<DogT | undefined>());
     dogName!:string;
     id = 0;
 
@@ -14,7 +14,7 @@ export class DogsService {
     }
 
     getDogByName(dName: string):void{
-        let result:WritableSignal<Dog | undefined> = signal(undefined);
+        let result:WritableSignal<DogT | undefined> = signal(undefined);
 
         if(CHOOSEABLEDOGS.filter(d => d.name == dName).length == 0){
             console.log('no dog named '+ dName+' found.');

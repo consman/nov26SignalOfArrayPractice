@@ -2,15 +2,15 @@
 
 
 <input placeholder="New Dog"  type="text" [(ngModel)]="dogName">
-
-<button (click)="chooseDog()">
-
-</button>
+<button (click)="chooseDog()"></button>
+<br>
 
 @let chosenDogs = this.dogsService.chosenDogsSig();
-
 @if(chosenDogs && chosenDogs.length > 0){
+
     @for (chosenDog of chosenDogs; track chosenDog?.id){
-        <div><span>Id: {{chosenDog?.id}}</span><span>Name: {{chosenDog?.name}}</span><span>Breed: {{chosenDog?.breed}}</span></div>
+        <!-- <div><span>Id: {{chosenDog?.id}}</span><span>Name: {{chosenDog?.name}}</span><span>Breed: {{chosenDog?.breed}}</span></div> -->
+        <app-dog [currDog] = "chosenDog"> </app-dog><br>
     }
+    
 }

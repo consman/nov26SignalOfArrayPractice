@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { DogsService } from '../dogs-service';
 import { FormsModule } from '@angular/forms';
+import { Dog } from '../dog/dog';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, Dog],
   selector: 'app-dogs',
   styleUrl: './dogs.css',
   templateUrl: './dogs.html',
@@ -12,7 +13,7 @@ export class Dogs {
 
 
   dogName!:string;
-  dogsService= inject(DogsService)
+  dogsService= inject(DogsService);
 
   constructor(){
 

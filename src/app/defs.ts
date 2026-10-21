@@ -1,16 +1,16 @@
-export interface Dog {
+export interface DogT {
     name: string;
     breed: string;
     id: number;
 }
 
-export const initialDog : Dog = {
+export const initialDog : DogT = {
     name: "",
     breed: "",
     id: 0
 }
 
-export const CHOOSEABLEDOGS:Dog []=[
+export const CHOOSEABLEDOGS:DogT []=[
     {"name": "Missie", "breed": "Rotwheiler", "id":0}, //TODO fix the breed names
     {"name": "Darmah", "breed": "Malamoot", "id":0},
     {"name": "Koda", "breed": "Doberman", "id":0},
