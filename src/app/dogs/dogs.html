@@ -1,0 +1,16 @@
+<p>Choose and list Dogs to see a Signal of an Array of Objects in action.</p>
+
+
+<input placeholder="New Dog"  type="text" [(ngModel)]="dogName">
+
+<button (click)="chooseDog()">
+
+</button>
+
+@let chosenDogs = this.dogsService.chosenDogsSig();
+
+@if(chosenDogs && chosenDogs.length > 0){
+    @for (chosenDog of chosenDogs; track chosenDog?.id){
+        <div><span>Id: {{chosenDog?.id}}</span><span>Name: {{chosenDog?.name}}</span><span>Breed: {{chosenDog?.breed}}</span></div>
+    }
+}
