@@ -1,8 +1,9 @@
 @let dog = currDog();
 @if(dog){
-    <td>id: {{dog.id}}</td>
+    <span>id: {{dog.id}} </span>
 
-    <td>Name: {{dog.name}}</td>
+    <span> Name: {{dog.name}} </span>
 
-    <td>Breed: {{dog.breed}}</td>
+    <span> Breed: {{dog.breed}} </span>
+    <span (click)="handleClose()" class="close"> X</span>
 }

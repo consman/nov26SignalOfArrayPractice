@@ -27,10 +27,12 @@ export class DogsService {
                 console.log('Success dog named '+ dName+' found.');
                 this.chosenDogsSig.update(dSoFar => [...dSoFar,foundDog]);
             }
-        }
-               
+        }               
     }
 
+    removeDogById(id:number):void{
+        this.chosenDogsSig.update(dogs => dogs.filter(dog => dog && dog.id !== id));
+    }
 
 
 }

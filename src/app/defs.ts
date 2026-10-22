@@ -12,7 +12,7 @@ export const initialDog : DogT = {
 
 export const CHOOSEABLEDOGS:DogT []=[
     {"name": "Missie", "breed": "Rotwheiler", "id":0}, //TODO fix the breed names
-    {"name": "Darmah", "breed": "Malamoot", "id":0},
+    {"name": "Dharma", "breed": "Malamoot", "id":0},
     {"name": "Koda", "breed": "Doberman", "id":0},
     {"name": "Jeter", "breed": "Golden Retriever", "id":0},
 ];

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { DogsService } from '../dogs-service';
 import { FormsModule } from '@angular/forms';
 import { Dog } from '../dog/dog';
@@ -11,16 +11,21 @@ import { Dog } from '../dog/dog';
 })
 export class Dogs {
 
-
   dogName!:string;
   dogsService= inject(DogsService);
+  countSig = signal(0);
 
-  constructor(){
+  constructor(){}
 
-  }
-
+    computedDogsCountSig = computed(():number => {
+      const chosenDogs = this.dogsService.chosenDogsSig();
+      const count = this.countSig();    
+      return chosenDogs.length > count ? chosenDogs.length : count;
+  });
+  
   chooseDog():void {
     this.dogsService.getDogByName(this.dogName);
   }
+
 
 }
